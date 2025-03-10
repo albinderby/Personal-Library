@@ -1,1 +1,53 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Personal Book Library</h1>
+
+    <form action="#" id="AddBookForm">
+        <label for="Name">Name
+            <input type="text" id="Name" name="name" >
+        </label>
+        <label for="Author">Author
+            <input type="text" id="Author" name="author">
+        </label>
+        <label for="Year">Year
+            <input type="number" id="year" name="year">
+        </label>
+        <label for="Pages">Pages
+            <input type="number" id="Pages" name="pages">
+        </label>
+        <label for="Status">Reading Status
+            <select name="status" id="Status" name="status">
+                <option value="Reading">
+                    Reading
+                </option>
+                <option value="Not reading">Not reading</option>
+            </select>
+        </label>
+        <button type="submit">Add</button>
+    </form>
+
+    <div class="library">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Pages</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
