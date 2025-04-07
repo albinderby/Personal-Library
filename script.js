@@ -15,11 +15,16 @@ function createBook(name,author,year,pages,status){
     MyLibrary.push(new Book(name,author,year,pages,status,id));
 
 }
+Book.prototype.toggleStatus=function(){
+    if(this.status=="Reading")this.status="Not reading";
+    else this.status="Reading";
+}
 
-createBook("boodk1","author1",1984,29,"not Read")
-createBook("boodk1","author1",1980,34,"not Read")
-createBook("boodk1","author1",1980,90,"not Read")
-createBook("boodk1","author1",1984,911,"not Read")
+
+createBook("boodk1","author1",1984,29,"Not Read")
+createBook("boodk1","author1",1980,34,"Not Read")
+createBook("boodk1","author1",1980,90,"Not Read")
+createBook("boodk1","author1",1984,911,"Not Read")
 
 //this loop is for display first time allthe book in the library.
 for(let i=0;i<MyLibrary.length;i++){
@@ -64,11 +69,16 @@ function display(book){
 
 } 
 function status(e){
+    let td=e.target.parentElement;
+    let row=td.parentElement;
+    let bookIndex=MyLibrary.findIndex(book =>  book.id===row.dataset.id);
+    MyLibrary[bookIndex].toggleStatus();
     if(e.target.textContent==="Not reading"){
         e.target.textContent="Reading";
     }else{
         e.target.textContent="Not reading"
     }
+
 }
 
 function Delete(e){
