@@ -33,7 +33,6 @@ for (let i = 0; i < MyLibrary.length; i++) {
 
 
 function display(book) {
-    console.log(book);
     let table = document.querySelector(".library>table");
     let tr = document.createElement("tr");
     for (data in book) {
